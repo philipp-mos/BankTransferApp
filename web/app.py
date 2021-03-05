@@ -20,6 +20,17 @@ def UserExist(username):
         return True
 
 
+class Home(Resource):
+    def get(self):
+
+        returnJson = {
+            "status": 200,
+            "message": "Hello world"
+        }
+
+        return jsonify(returnJson)
+
+
 class Register(Resource):
     def post(self):
         
@@ -58,6 +69,7 @@ class Register(Resource):
 
 
 
+api.add_resource(Home, '/home')
 api.add_resource(Register, '/register')
 
 
